@@ -11,3 +11,5 @@
 
 // Decrement all elements to the smallest element
 // minOp = arrSum - n * smallest
+
+memo = { 2: 5 };
