@@ -25,3 +25,51 @@ function largestRange(array) {
       
       return [ans[1],ans[2]]
 }
+
+// Time: O(n), Space: O(n)
+function largestRange(array) {
+    // Write your code here.
+      let hash = {};
+      
+      for(let num of array) {
+          hash[num] = false;
+      }
+      
+      let range = [0,0,0];
+      
+      for(let key of array) {
+          if(!hash[key]) {
+              hash[key] = true;
+              let left = key - 1;
+              let right = key + 1;
+              while(left in hash) {			
+                      hash[left] = true;
+                      left--;
+              }
+              
+              while(right in hash) {			
+                      hash[right] = true;
+                      right++;
+              }
+              
+              let diff = Math.abs(right-left) + 1;
+              if(diff > range[0]) {
+                      range[0] = diff;
+                      range[1] = left + 1;
+                      range[2] = right - 1;
+                  }
+      }
+      }
+      
+      
+      return [range[1], range[2]];
+      
+      
+      
+      
+      
+  }
+  
+  // Do not edit the line below.
+  exports.largestRange = largestRange;
+  
