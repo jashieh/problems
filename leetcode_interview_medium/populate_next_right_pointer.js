@@ -35,3 +35,28 @@ var connect = function(root) {
 };
 
 // Solution 2
+
+var connect = function(root) {
+    if(!root) return null;
+    
+    let leftNode = root;
+    
+    while(leftNode.left) {
+        let head = leftNode;
+        
+        while(head) {
+            head.left.next = head.right;                
+            
+            if(head.next) {
+                head.right.next = head.next.left;
+            }
+            
+            head = head.next;
+        }
+        
+        leftNode = leftNode.left;
+    }
+    
+    return root;
+    
+};
