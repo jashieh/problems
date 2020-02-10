@@ -25,3 +25,25 @@ var trap = function(height) {
     return sum;
     
 };
+
+//
+var trap = function(height) {
+    let low = 0;
+    let high = height.length - 1;
+    
+    let leftMax = 0;
+    let rightMax = 0;
+    let sum = 0;
+    
+    while(low < high) {
+        if(height[low] < height[high]) {
+            height[low] > leftMax ? leftMax = height[low] : sum += leftMax - height[low];
+            low++;
+        } else {
+            height[high] > rightMax ? rightMax = height[high] : sum += rightMax - height[high];
+            high--;
+        }
+    }
+    
+    return sum;
+};
