@@ -25,6 +25,5 @@ var combinationSum = function(candidates, target, memo = {}) {
         }
     }
     
-    return res;
-      
+    return res;    
 };
