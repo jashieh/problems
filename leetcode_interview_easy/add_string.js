@@ -12,9 +12,9 @@ var addStrings = function(num1, num2) {
         let curr1 = l1 >= 0 ? parseInt(num1[l1]) : 0;
         let curr2 = l2 >= 0 ? parseInt(num2[l2]) : 0;
         
-        let sum = curr1 + curr2;
-        let num = ((carry + sum) % 10).toString();
-        carry = Math.floor((carry + sum)/10);
+        let sum = curr1 + curr2 + carry;
+        let num = (sum % 10).toString();
+        carry = Math.floor(sum/10);
         ans = num + ans;
         l1--;
         l2--;
