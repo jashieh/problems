@@ -1,6 +1,4 @@
 function subtract(num1,num2) {
-    if(num1.length < num2.length) return subtract(num2,num1);
-
     let l1 = num1.length - 1;
     let l2 = num2.length - 1;
     let carry = 0;
